@@ -1,0 +1,250 @@
+I LOVE YOU BABY
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>365 Days of Us | Jan 30, 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        :root {
+            --bg: #050505;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --accent: #ff4d6d;
+            --accent-glow: rgba(255, 77, 109, 0.4);
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Smooth Scroll */
+        html { scroll-behavior: smooth; }
+
+        /* --- Intro Overlay --- */
+        #intro-overlay {
+            position: fixed;
+            inset: 0;
+            background: var(--bg);
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .enter-btn {
+            background: none;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 1rem 2.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .enter-btn:hover {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        /* --- Background Canvas --- */
+        #canvas-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 1s ease;
+        }
+
+        section.visible { opacity: 1; transform: translateY(0); }
+
+        .hero { text-align: center; }
+        
+        .date-badge {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            color: var(--accent);
+            border: 1px solid var(--border);
+            padding: 6px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            margin-bottom: 20px;
+        }
+
+        /* Bento Grid */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .bento-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 40px;
+            border-radius: 24px;
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .bento-item i { color: var(--accent); margin-bottom: 15px; }
+
+        /* Letter Box */
+        .letter-box {
+            background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+            border: 1px solid var(--border);
+            padding: 50px;
+            border-radius: 30px;
+            text-align: center;
+        }
+
+        .heart-btn {
+            width: 70px; height: 70px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin: 30px auto 0;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .heart-btn:active { transform: scale(0.9); }
+
+        @media (max-width: 600px) {
+            .bento-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="intro-overlay">
+        <div class="date-badge">MEMORIES • 2026</div>
+        <h2 style="margin-bottom: 30px; font-family: 'Playfair Display'; font-style: italic;">Ready for your surprise?</h2>
+        <button class="enter-btn" onclick="startExperience()">OPEN YOUR GIFT</button>
+    </div>
+
+    <canvas id="canvas-bg"></canvas>
+
+    <div class="container">
+        <section class="hero visible">
+            <div class="date-badge">JANUARY 30, 2026</div>
+            <h1>Happy <span style="color: var(--accent)">Anniversary</span>.</h1>
+            <p style="color: var(--text-dim); font-size: 1.1rem;">Another year of us. You are my favorite person, today and always.</p>
+        </section>
+
+        <section id="highlights">
+            <div class="bento-grid">
+                <div class="bento-item">
+                    <i data-lucide="map-pin"></i>
+                    <h3>The Journey</h3>
+                    <p style="color: var(--text-dim)">Every step we take together is my favorite part of the day.</p>
+                </div>
+                <div class="bento-item">
+                    <i data-lucide="heart"></i>
+                    <h3>The Love</h3>
+                    <p style="color: var(--text-dim)">It's the small moments that make the big picture so beautiful.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="letter-box">
+                <p style="font-family: 'Playfair Display'; font-size: 1.5rem; font-style: italic;">
+                    "In 2025, you were my rock. In 2026, you're my whole world. I love you more than words can say."
+                </p>
+                <div class="heart-btn" onclick="triggerConfetti()">
+                    <i data-lucide="heart" color="white" fill="white"></i>
+                </div>
+            </div>
+        </section>
+
+        <footer style="padding: 100px 0; text-align: center; color: var(--text-dim);">
+            <p>Always & Forever • [Your Name]</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        lucide.createIcons();
+
+        function startExperience() {
+            const overlay = document.getElementById('intro-overlay');
+            overlay.style.opacity = '0';
+            overlay.style.pointerEvents = 'none';
+        }
+
+        function triggerConfetti() {
+            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#ff4d6d', '#ffffff'] });
+        }
+
+        // Simple Fade-in Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(s => observer.observe(s));
+
+        // Background Particles
+        const canvas = document.getElementById('canvas-bg');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        window.onresize = resize; resize();
+
+        class P {
+            constructor() { 
+                this.x = Math.random() * canvas.width; 
+                this.y = Math.random() * canvas.height; 
+                this.v = Math.random() * 0.5; 
+            }
+            update() { this.y -= this.v; if (this.y < 0) this.y = canvas.height; }
+            draw() { ctx.fillStyle = 'rgba(255, 77, 109, 0.2)'; ctx.fillRect(this.x, this.y, 2, 2); }
+        }
+        for(let i=0; i<50; i++) particles.push(new P());
+        function anim() { 
+            ctx.clearRect(0,0,canvas.width, canvas.height); 
+            particles.forEach(p => { p.update(); p.draw(); }); 
+            requestAnimationFrame(anim); 
+        }
+        anim();
+    </script>
+</body>
+</html>
